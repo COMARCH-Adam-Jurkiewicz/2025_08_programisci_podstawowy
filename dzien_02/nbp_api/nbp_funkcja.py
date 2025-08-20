@@ -19,3 +19,8 @@ def import_from_nbp(kod_waluty='USD'):
             mid = waluta_rate['mid']
             return (data_tabeli, nr_tabeli, cur, mid)
     return None
+
+dane = import_from_nbp()
+print(dane)
+chf = import_from_nbp("chf")
+print(chf)
