@@ -9,6 +9,6 @@ for _ in range(200):
     print(wiersz)
 
 # Tworzenie pliku CSV otwieranego przez Excela
-with open('../dzien_02/dane.csv', 'w', newline='', encoding='utf-8') as plik:
+with open('dane.csv', 'w', newline='', encoding='utf-8') as plik:
     writer = csv.writer(plik)
     writer.writerows(tablica)

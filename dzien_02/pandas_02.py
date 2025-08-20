@@ -1,0 +1,31 @@
+# program r5_01_data_frame.py
+# pandas
+
+from sys import exit
+
+try:
+    import pandas as pd
+
+    print("Moduł pandas wczytany.")
+except:
+    print("Zainstaluj: 'pip install pandas' ")
+    exit(0)
+
+# Jest ok, działamy dalej
+source_data = "dane.csv"
+
+
+print(f"Dane źródłowe: {source_data=}")
+
+# Tworzymy tzw. "DataFrame"
+try:
+    df = pd.read_csv(source_data)
+    print("Pobrano dane źródłowe.")
+except:
+    print("UWAGA! Wystąpił błąd.")
+    exit(0)
+
+# Wyświetlamy dane pobrane z sieci
+print("----[ informacje o danych źródłowych ]---")
+print(df)
+print("----------------")
