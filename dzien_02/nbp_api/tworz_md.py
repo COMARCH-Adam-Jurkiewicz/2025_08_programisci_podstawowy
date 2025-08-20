@@ -29,4 +29,4 @@ doc.add_horizontal_rule()
 
 doc.dump(nazwa_md)
 
-subprocess.run(polecenia)
+subprocess.run(polecenie)
