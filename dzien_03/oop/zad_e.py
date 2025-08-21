@@ -20,19 +20,21 @@ class Ksiazka_telefoniczna:
     def pokaz_ksiazke(self):
         if self.wpisy is None:
             print(f"PUSTO tu.... {self.rodzaj}")
-        # a tu pokazemy wpisy
+        print(f"Książka: {self.rodzaj} {self.wpisy}")
+
 
     def dodaj_pozycje(self,imie_nazwisko, email, nr_telefonu):
         if self.wpisy is None:
             self.wpisy = {}
-
         self.wpisy[imie_nazwisko] = [email, nr_telefonu]
 
 
-ksiazka_prywatna = Ksiazka_telefoniczna("priv")
-ksiazka_sluzbowa = Ksiazka_telefoniczna("company")
+ksiazka_prywatna = Ksiazka_telefoniczna("prywatna")
+ksiazka_sluzbowa = Ksiazka_telefoniczna("służbowa")
 
-ksiazka_prywatna.pokaz_ksiazke()
+Ksiazka_telefoniczna.dodaj_pozycje(ksiazka_prywatna, "Adrian Kubicki", "adi@wp.pl", "505123123")
+Ksiazka_telefoniczna.dodaj_pozycje(ksiazka_prywatna, "Konrad Piwnik", "kondek@wp.pl", "888123123")
+
 ksiazka_prywatna.dodaj_pozycje("Adam_Jurkiewicz","adam@jurkiewicz.tech", "662.144.425")
 ksiazka_prywatna.dodaj_pozycje("Beata_Jurkiewicz","beata@jurkiewicz.tech", "662.144.425")
 ksiazka_prywatna.dodaj_pozycje("Szymon_Jurkiewicz","szymon@jurkiewicz.tech", "662.144.425")
@@ -44,4 +46,11 @@ ksiazka_sluzbowa.dodaj_pozycje("S_Szymon_Jurkiewicz","szymon@jurkiewicz.tech", "
 ksiazka_sluzbowa.dodaj_pozycje("S_Adam_Jurkiewicz","xxxxx@jurkiewicz.tech", "662.144.425")
 
 
-ksiazka_prywatna.pokaz_ksiazke()
+
+Ksiazka_telefoniczna.pokaz_ksiazke()
+Ksiazka_telefoniczna.pokaz_ksiazke()
+
+
+
+
+
