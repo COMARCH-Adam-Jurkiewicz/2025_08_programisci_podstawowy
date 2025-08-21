@@ -1,6 +1,11 @@
+
+print("START")
+
 from faker import Faker
 import csv
 fake = Faker(["pl_PL", "de_DE"])
+
+print("START 2")
 
 tablica = []
 for _ in range(200):
@@ -12,3 +17,5 @@ for _ in range(200):
 with open('dane.csv', 'w', newline='', encoding='utf-8') as plik:
     writer = csv.writer(plik)
     writer.writerows(tablica)
+
+print("STOP")
