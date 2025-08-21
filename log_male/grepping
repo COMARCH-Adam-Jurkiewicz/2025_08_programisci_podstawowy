@@ -1,0 +1,1 @@
+cat %f | grep -E "Login:|Program Saved|Loaded Program" > %f.log
