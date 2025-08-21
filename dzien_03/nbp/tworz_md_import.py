@@ -6,7 +6,7 @@ import subprocess
 from nbp_funkcja import import_from_nbp
 
 doc = snakemd.new_doc()
-waluta = 'chf'
+waluta = 'BAT'
 nr_tabeli = None
 data_tabeli = None
 kurs = None
@@ -38,6 +38,14 @@ kurs 1 {waluta_nazwa} wynosi {kurs} zł.
 """)
 doc.add_horizontal_rule()
 
-doc.dump(nazwa_md)
+try:
+    doc.dump(nazwa_md)
+except Exception as e:
+    print(f"ERROR - {e}")
+    sys.exit(2)
 
-subprocess.run(polecenie)
+try:
+    subprocess.run(polecenie,capture_output=True)
+except Exception as e:
+    print(f"ERROR on running - {e}")
+    sys.exit(3)

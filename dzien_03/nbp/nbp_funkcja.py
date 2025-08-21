@@ -3,7 +3,7 @@ import requests
 def import_from_nbp(kod_waluty='USD'):
     """
 
-    :param waluta: kod waluty, default="USD
+    :param kod_waluty: kod waluty, default="USD
     :return: dane_waluty dict
     """
     error_txt = f"Nie znaleziono kodu waluty: {kod_waluty} "
