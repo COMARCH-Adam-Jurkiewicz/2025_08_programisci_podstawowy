@@ -2,6 +2,7 @@ import snakemd
 from datetime import datetime
 import subprocess
 
+print("START")
 doc = snakemd.new_doc()
 waluta = 'USD'
 nr_tabeli = None
