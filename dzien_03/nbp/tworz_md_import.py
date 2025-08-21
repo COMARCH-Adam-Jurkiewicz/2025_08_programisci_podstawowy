@@ -6,7 +6,7 @@ import subprocess
 from nbp_funkcja import import_from_nbp
 
 doc = snakemd.new_doc()
-waluta = 'BAT'
+waluta = 'CHF'
 nr_tabeli = None
 data_tabeli = None
 kurs = None
@@ -45,7 +45,11 @@ except Exception as e:
     sys.exit(2)
 
 try:
-    subprocess.run(polecenie,capture_output=True)
+    polecenie_wynik = subprocess.run(polecenie,capture_output=True)
+    if polecenie_wynik.returncode != 0:
+        print(f"ERROR - {polecenie_wynik.returncode} / {polecenie_wynik.stderr}")
+        sys.exit(4)
+
 except Exception as e:
     print(f"ERROR on running - {e}")
     sys.exit(3)
