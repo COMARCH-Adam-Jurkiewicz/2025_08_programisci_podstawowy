@@ -1,3 +1,4 @@
+import sys
 import snakemd
 from datetime import datetime
 import subprocess
@@ -5,12 +6,19 @@ import subprocess
 from nbp_funkcja import import_from_nbp
 
 doc = snakemd.new_doc()
-waluta = 'gep'
+waluta = 'chf'
 nr_tabeli = None
 data_tabeli = None
 kurs = None
 waluta_nazwa = None
-data_tabeli, nr_tabeli, waluta_nazwa, kurs = import_from_nbp(waluta)
+wynik, dane_o_walucie = import_from_nbp(waluta)
+if wynik is True:
+    data_tabeli, nr_tabeli, waluta_nazwa, kurs = dane_o_walucie
+
+if wynik is False:
+    print(f"ERROR - {dane_o_walucie}")
+    sys.exit(15)
+
 nazwa_md = f"plik_{waluta}_{data_tabeli}"
 plik_md = f"{nazwa_md}.md"
 plik_docx = f"{nazwa_md}.docx"
