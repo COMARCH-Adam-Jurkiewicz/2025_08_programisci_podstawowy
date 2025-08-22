@@ -7,6 +7,7 @@ __pycache__/
 *.so
 # Adama
 log_check/
+log_male/
 
 # Distribution / packaging
 .Python
