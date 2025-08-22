@@ -1,0 +1,14 @@
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return '<h2>Index Page</h2>'
+
+@app.route('/hello')
+def hello():
+    x = 3 / 0
+    return '<h1>Hello, World</h1>'
+
+app.run(debug=False)
